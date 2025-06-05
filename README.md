@@ -1,6 +1,7 @@
+
 # Webhook Receiver – GitHub Event Listener
 
-This repository handles incoming GitHub webhook events from the [`action-repo`]and stores minimal data in MongoDB. It also provides a clean frontend to display recent GitHub activity (Push, Pull Request).
+This repository handles incoming GitHub webhook events from the [`action-repo`](https://github.com/your-username/action-repo) and stores minimal data in MongoDB. It also provides a clean frontend to display recent GitHub activity (Push, Pull Request, Merge).
 
 ---
 
@@ -58,24 +59,70 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
+```
 
-### Setting Up GitHub Webhook
-1.Go to your action-repo on GitHub
+Create a `.env` file (optional) or set Mongo URI in `__init__.py`:
 
-2.Settings → Webhooks → Add webhook
+```python
+app.config["MONGO_URI"] = "mongodb://localhost:27017/webhookDB"
+```
 
-3.Payload URL: http://your-ip:5000/webhook/receiver
+### Run Flask App
 
-4.Content type: application/json
+```bash
+python run.py
+```
 
-4.Events to send:
+Visit: `http://localhost:5000/`
 
-5.Just the push event
+---
 
-6.Pull requests
+## 🔗 Setting Up GitHub Webhook
 
-7.Save
+1. Go to your `action-repo` on GitHub
+2. Settings → Webhooks → Add webhook
+3. Payload URL: `http://your-ip:5000/webhook/receiver`
+4. Content type: `application/json`
+5. Events to send:
+   - Just the push event
+   - Pull requests
+6. Save
 
+---
+
+## 📺 Frontend UI
+
+The frontend will show events in these formats:
+
+- **Push:** `"Travis" pushed to "staging" on 1st April 2021 - 9:30 PM UTC`
+- **Pull Request:** `"Travis" submitted a pull request from "staging" to "master" on 1st April 2021 - 9:00 AM UTC`
+- **Merge:** `"Travis" merged branch "dev" to "master" on 2nd April 2021 - 12:00 PM UTC`
+
+---
+
+## 📂 Project Structure
+
+```
+webhook-repo/
+├── app/
+│   ├── __init__.py
+│   ├── extensions.py
+│   └── webhook/
+│       └── routes.py
+├── templates/
+│   └── index.html
+├── run.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ✅ Testing
+
+- Push to `action-repo` or create a PR to trigger webhooks
+- Check MongoDB: `db.events.find().pretty()`
+- Watch the frontend update in real-time every 15s
 
 ---
 
@@ -92,3 +139,15 @@ Shows webhook data being stored in MongoDB with expected schema.
 Clean and minimal UI showing GitHub events with live polling every 15 seconds.
 
 ![UI Screenshot](./ui_screenshot.png)
+
+---
+
+## 🤝 Contributing
+
+PRs and suggestions are welcome! Open an issue or fork this repo.
+
+---
+
+## 📝 License
+
+This project is licensed for assessment and learning purposes.
