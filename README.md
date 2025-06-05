@@ -58,3 +58,20 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 pip install -r requirements.txt
+
+### Setting Up GitHub Webhook
+1.Go to your action-repo on GitHub
+
+2.Settings → Webhooks → Add webhook
+
+3.Payload URL: http://your-ip:5000/webhook/receiver
+
+4.Content type: application/json
+
+4.Events to send:
+
+5.Just the push event
+
+6.Pull requests
+
+7.Save
