@@ -131,14 +131,14 @@ webhook-repo/
 ### 🔍 Webhook Data in MongoDB
 Shows webhook data being stored in MongoDB with expected schema.
 
-![MongoDB Screenshot]()
+![MongoDB Screenshot](.app/templates/mongodb-img.png)
 
 ---
 
 ### 🖥️ Frontend UI Display
 Clean and minimal UI showing GitHub events with live polling every 15 seconds.
 
-![UI Screenshot]([(https://drive.google.com/file/d/1HG9lATkAcr4OiOFxEUIPPM0CxrnH0XoV/view?usp=drive_link))
+![UI Screenshot](.app/templates/ui-img.png)
 
 ---
 
