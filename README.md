@@ -75,3 +75,20 @@ pip install -r requirements.txt
 6.Pull requests
 
 7.Save
+
+
+---
+
+## 🖼️ Screenshots
+
+### 🔍 Webhook Data in MongoDB
+Shows webhook data being stored in MongoDB with expected schema.
+
+![MongoDB Screenshot](./mongodb_screenshot.png)
+
+---
+
+### 🖥️ Frontend UI Display
+Clean and minimal UI showing GitHub events with live polling every 15 seconds.
+
+![UI Screenshot](./ui_screenshot.png)
