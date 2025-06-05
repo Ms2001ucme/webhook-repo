@@ -10,7 +10,6 @@ This repository handles incoming GitHub webhook events from the [`action-repo`](
 - Receives webhooks from GitHub for:
   - Push
   - Pull Request (opened)
-  - Merge (closed + merged)
 - Stores event data in MongoDB
 - Frontend UI auto-refreshes every 15 seconds to show latest actions
 
@@ -87,16 +86,6 @@ Visit: `http://localhost:5000/`
    - Just the push event
    - Pull requests
 6. Save
-
----
-
-## 📺 Frontend UI
-
-The frontend will show events in these formats:
-
-- **Push:** `"Travis" pushed to "staging" on 1st April 2021 - 9:30 PM UTC`
-- **Pull Request:** `"Travis" submitted a pull request from "staging" to "master" on 1st April 2021 - 9:00 AM UTC`
-- **Merge:** `"Travis" merged branch "dev" to "master" on 2nd April 2021 - 12:00 PM UTC`
 
 ---
 
