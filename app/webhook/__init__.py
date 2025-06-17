@@ -5,3 +5,4 @@ from app.webhook.routes import webhook
 
 # Re-export the blueprint for app factory
 webhook_bp = webhook
+
